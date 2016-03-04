@@ -2,6 +2,7 @@ package me.chuvashev.carlauncher.di.modules;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import autodagger.AutoExpose;
 import dagger.Module;
 import dagger.Provides;
@@ -30,6 +31,12 @@ public class AppModule {
     @AutoExpose(App.class)
     public Context provideContext() {
         return mApplication;
+    }
+
+    @Provides
+    @Singleton
+    public PackageManager providePackageManager(Context context) {
+        return context.getPackageManager();
     }
 
 }

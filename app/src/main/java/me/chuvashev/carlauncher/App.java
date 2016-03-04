@@ -3,6 +3,8 @@ package me.chuvashev.carlauncher;
 import android.app.Application;
 import autodagger.AutoComponent;
 import me.chuvashev.carlauncher.di.modules.AppModule;
+import me.chuvashev.carlauncher.di.modules.DataModule;
+import me.chuvashev.carlauncher.di.modules.DomainModule;
 
 import javax.inject.Singleton;
 
@@ -13,7 +15,7 @@ import javax.inject.Singleton;
  * Time: 23:39
  */
 @Singleton
-@AutoComponent(modules = {AppModule.class})
+@AutoComponent(modules = {AppModule.class, DataModule.class, DomainModule.class})
 public class App extends Application {
 
     private static App sApp;
